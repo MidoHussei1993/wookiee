@@ -1,0 +1,25 @@
+<div class="example-2 card" (click)="navigateToMoviePage()">
+    <div class="wrapper" style="background-image: url({{movie.poster}});">
+      <div class="header">
+        <div class="date">
+          <span class="day">{{movie.released_on | date: 'dd/MM/yyyy'}}</span>
+          
+        </div>
+        <ul class="menu-content">
+          <li>
+            <a href="#" class="fa fa-bookmark-o"></a>
+          </li>
+          <li><a href="#" class="fa fa-heart-o"><span>{{movie.imdb_rating}} |</span></a></li>
+         
+        </ul>
+      </div>
+      <div class="data">
+        <div class="content">
+          <span class="author" *ngFor="let actor of movie.cast">{{actor}}</span>
+          <h1 class="title"><a href="#">{{movie.title}}</a></h1>
+          <p class="text">{{movie.overview}}</p>
+          <a href="#" class="button">Read more</a>
+        </div>
+      </div>
+    </div>
+  </div>

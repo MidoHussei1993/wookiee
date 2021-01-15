@@ -1,0 +1,13 @@
+<div class="contain"  [ngStyle]="{'background-image': 'url(' + currentBG + ')'}" >
+  <div class="row scroll" *ngFor="let movies of filteredMovies | keyvalue">
+    <h1 class="mat-display-1 mb-0">{{ movies.key }}</h1>
+    <div class="row__inner">
+      <div class="tile" *ngFor="let movie of movies.value">
+        <app-movie-card 
+        [movie]="movie"
+        (navigate)="navigateToMovieDetails($event)"
+        ></app-movie-card>
+      </div>
+    </div>
+  </div>
+</div>
